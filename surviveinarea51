@@ -1,0 +1,62 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Survive in area 51 | Modded", "Ocean")
+
+local Tab = Window:NewTab("Main")
+local Tab2 = Window:NewTab("Player")
+local Tab3 = Window:NewTab("Others")
+
+local Section = Tab:NewSection("Teleports")
+local Section2 = Tab2:NewSection("Player stuff")
+local Section3 = Tab3:NewSection("")
+
+local player = game.Players.LocalPlayer.Character
+local Missle = game.Workspace["Floor 2"].GetRedMissile.Head
+local HEX = game.Workspace["Floor 2"].GetHEXGun.Head
+local Vulcan = game.Workspace.LavaZone.Escape.Head
+local bullsFolder = game.Workspace:FindFirstChild("Bulls")
+local burn = game.Workspace.Incinerator.ChallengeButton7.Button
+local craft = game.Workspace.CraftingRoom.Crate
+local portal = game.Workspace.DarkPortal.Part
+local lx = game.Workspace.MazeWorld["ESCAPE FROM THIS HELL"].Head
+
+Section:NewButton("Get red missile", "ButtonInfo", function()
+    player.HumanoidRootPart.CFrame = Missle.CFrame
+end)
+
+Section:NewButton("Get Hex gun", "ButtonInfo", function()
+    player.HumanoidRootPart.CFrame = HEX.CFrame
+end)
+
+Section:NewButton("Get vulcan", "ButtonInfo", function()
+    player.HumanoidRootPart.CFrame = Vulcan.CFrame
+end)
+
+Section:NewButton("delete bulls", "ButtonInfo", function()
+    -- Loop through all the children in the 'Bulls' folder and destroy them
+    if bullsFolder then
+        for _, child in pairs(bullsFolder:GetChildren()) do
+            child:Destroy()
+        end
+    else
+        warn("The 'Bulls' folder was not found.")
+    end
+end)
+
+Section:NewButton("Tp to burning sword (activate & stand)", "", function()
+    player.HumanoidRootPart.CFrame = burn.CFrame
+    wait(5)
+    player.HumanoidRootPart.CFrame = game.Workspace.Incinerator.GetBurningSword.CFrame
+end)
+
+Section:NewButton("Tp to craftroom", "", function()
+    player.HumanoidRootPart.CFrame = craft.CFrame
+end)
+
+Section:NewButton("Tp to portal", "", function()
+    player.HumanoidRootPart.CFrame = portal.CFrame
+end)
+
+Section:NewButton("Use inside wrong portal or ban", "", function()
+    player.HumanoidRootPart.CFrame = lx.CFrame
+end)
