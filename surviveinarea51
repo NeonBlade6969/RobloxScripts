@@ -3,12 +3,14 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Survive in area 51 | Modded", "Ocean")
 
 local Tab = Window:NewTab("Main")
-local Tab2 = Window:NewTab("Player")
+local Tab2 = Window:NewTab("READ ME")
 local Tab3 = Window:NewTab("Others")
+local Tab4 = Window:NewTab("Events")
 
 local Section = Tab:NewSection("Teleports")
-local Section2 = Tab2:NewSection("Player stuff")
-local Section3 = Tab3:NewSection("")
+local Section2 = Tab2:NewSection("Use the buttons after 1 min")
+local Section3 = Tab3:NewSection("Real")
+local Section4 = Tab4:NewSection("Events")
 
 local player = game.Players.LocalPlayer.Character
 local Missle = game.Workspace["Floor 2"].GetRedMissile.Head
@@ -59,4 +61,20 @@ end)
 
 Section:NewButton("Use inside wrong portal or ban", "", function()
     player.HumanoidRootPart.CFrame = lx.CFrame
+end)
+
+Section2:NewLabel("Re-execute script if buttons don't work")
+
+Section2:NewLabel("SupplyBox script only works when there is supply")
+
+Section2:NewLabel("Made by alex fully!")
+
+Section2:NewLabel("Dm z_justalex_z if u have any questions")
+
+Section3:NewButton("Infinite Yield", "", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section4:NewButton("Get supplybox", "", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/vhm8SzSC'))()
 end)
